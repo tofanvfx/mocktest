@@ -1,0 +1,84 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    font-family: 'Roboto', 'Noto Sans Devanagari', -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  }
+}
+
+/* Authentic TCS iON Question Palette Shapes */
+.palette-btn {
+  width: 38px;
+  height: 34px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.15s ease-in-out;
+  border: 1px solid #c0c0c0;
+}
+
+/* State 1: Not Visited (White/Grey with dark border) */
+.palette-not-visited {
+  background-color: #ffffff;
+  color: #333333;
+  border: 1px solid #b5b5b5;
+  border-radius: 4px;
+}
+
+/* State 2: Not Answered (Red/Orange-Red with clipped top corners) */
+.palette-not-answered {
+  background-color: #e74c3c;
+  color: #ffffff;
+  border: 1px solid #c0392b;
+  border-radius: 12px 12px 4px 4px;
+}
+
+/* State 3: Answered (Green with rounded bottom corners) */
+.palette-answered {
+  background-color: #27ae60;
+  color: #ffffff;
+  border: 1px solid #1e8449;
+  border-radius: 4px 4px 12px 12px;
+}
+
+/* State 4: Marked for Review (Deep Violet/Purple round pill) */
+.palette-review {
+  background-color: #8e44ad;
+  color: #ffffff;
+  border: 1px solid #6c3483;
+  border-radius: 50%;
+}
+
+/* State 5: Answered and Marked for Review (Purple with small green dot badge) */
+.palette-answered-review {
+  background-color: #8e44ad;
+  color: #ffffff;
+  border: 1px solid #6c3483;
+  border-radius: 50%;
+  position: relative;
+}
+
+.palette-answered-review::after {
+  content: '';
+  position: absolute;
+  top: 1px;
+  right: 1px;
+  width: 9px;
+  height: 9px;
+  background-color: #2ecc71;
+  border-radius: 50%;
+  border: 1.5px solid #ffffff;
+  box-shadow: 0 0 2px rgba(0,0,0,0.5);
+}
+
+/* Active question highlight border */
+.palette-current {
+  outline: 3px solid #2980b9 !important;
+  outline-offset: 1px;
+  transform: scale(1.06);
+  z-index: 10;
+}
